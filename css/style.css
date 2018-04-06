@@ -125,6 +125,10 @@ footer p{
     margin-bottom: 5px;
 }
 
+.errorspan{
+    color:#fc8d59;
+}
+
 .clearfix:after {
     content: ".";
     display: block;

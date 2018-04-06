@@ -2,16 +2,17 @@
     // Adapted from: https://www.formget.com/form-validation-using-php/
     // Initialize variables to null.
     $customerNameError = $emailAddressError = $phoneNumberError = $referralError = "";
+    $customerName = $emailAddress = $phoneNumber= $referral = "";
 
     // On submitting form below function will execute.
-    if(isset($_POST['submit'])){
+    if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btnSubmit'])){
         if (empty($_POST["customerName"])) {
             $customerNameError = "Name is required";
         } else {
             $customerName = test_input($_POST["customerName"]);
             // check name only contains letters and whitespace
             if (!preg_match("/^[a-zA-Z ]*$/",$customerName)) {
-                $customerNameError = "Only letters and white space allowed";
+                $customerNameError = "Enter a valid name";
             }
         }
         if (empty($_POST["emailAddress"])) {
@@ -19,8 +20,8 @@
         } else {
             $emailAddress = test_input($_POST["emailAddress"]);
             // check if e-mail address syntax is valid or not
-            if (!preg_match("/([w-]+@[w-]+.[w-]+)/",$emailAddress)) {
-                $emailAddressError = "Invalid Email address format";
+            if (!preg_match("/^\w+@\w+\.\w{2,3}$/",$emailAddress)) {
+                $emailAddressError = "Enter a valid Email";
             }
         }
         if (empty($_POST["phoneNumber"])) {
@@ -28,8 +29,8 @@
         } else {
             $phoneNumber = test_input($_POST["phoneNumber"]);
             // check if phone syntax is valid or not
-            if (!preg_match("\"/^[0-9]{3}-?[0-9]{3}-?[0-9]{4}$/\"",$phoneNumber)) {
-                $phoneNumberError = "Invalid phone format";
+            if (!preg_match("/^\d{3}-?\d{3}-?\d{4}$/",$phoneNumber)) {
+                $phoneNumberError = "Enter a valid Phone";
             }
         }
         if (empty($_POST["referral"])) {
@@ -38,6 +39,7 @@
             $referral = test_input($_POST["referral"]);
         }
     }
+
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
