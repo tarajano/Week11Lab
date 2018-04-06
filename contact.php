@@ -24,15 +24,15 @@
                         <table>
                             <tr>
                                 <td>Name:</td>
-                                <td><input type="text" name="customerName" id="customerName" size='40'></td>
+                                <td><input type="text" name="customerName" id="customerName" placeholder="Jane Doe" size='40'><?php echo $emailError;?></td>
                             </tr>
                             <tr>
                                 <td>Phone Number:</td>
-                                <td><input type="text" name="phoneNumber" id="phoneNumber" size='40'></td>
+                                <td><input type="text" name="phoneNumber" id="phoneNumber"  placeholder="613-123-4567" size='40'></td>
                             </tr>
                             <tr>
                                 <td>Email Address:</td>
-                                <td><input type="text" name="emailAddress" id="emailAddress" size='40'>
+                                <td><input type="text" name="emailAddress" id="emailAddress" placeholder="you@domain.com" size='40'><span class="error"><?php echo $emailError;?></span></td>
                             </tr>
                             <tr>
                                 <td>How did you hear<br> about us?</td>
