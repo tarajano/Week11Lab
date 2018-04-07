@@ -57,6 +57,9 @@
                                     <input type='reset' name="btnReset" id="btnReset" value="Reset Form">
                                 </td>
                             </tr>
+                            <tr>
+                                <td colspan='2'><span class="errorspan"><?php echo $storeSubscriberFeedback;?></span></td>
+                            </tr>
                         </table>
                     </form>
                 </div><!-- End Main -->

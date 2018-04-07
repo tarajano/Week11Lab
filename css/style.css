@@ -125,8 +125,8 @@ footer p{
     margin-bottom: 5px;
 }
 
-.errorspan{
-    color:#fc8d59;
+table td{
+    padding:5px;
 }
 
 .clearfix:after {
@@ -136,6 +136,19 @@ footer p{
     clear: both;
     visibility: hidden;
 }
-table td{
-    padding:5px;
+
+.errorspan{
+    color:#fc8d59;
 }
+
+table#subscribers{
+    border: 5px solid white;
+    border-collapse:collapse;
+    background-color:lightgray;
+    color: black;
+}
+
+#subscribers thead{
+    font-weight:bold;
+}
+
